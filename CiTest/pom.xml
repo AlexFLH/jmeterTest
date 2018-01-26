@@ -67,29 +67,29 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <transformationSets>
-                        <transformationSet>
-                            <dir>${jmeter.result.jtl.dir}</dir>
-                            <stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>
-                            <outputdir>${jmeter.result.html.dir}</outputdir>
-                            <filemappers>
-                                <filemapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                                    <targetextension>html</targetextension>
-                                </filemapper>
-                            </filemappers>
-                        </transformationSet>
-                        <transformationset><dir>${jmeter.result.jtl.dir}</dir>
-                            <stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>
-                            <outputdir>${jmeter.result.html.dir1}</outputdir>
-                            <filemappers>
-                                <filemapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                                    <targetextension>html</targetextension>
-                                </filemapper>
-                            </filemappers>
-                        </transformationset>
-                    </transformationSets>
-                </configuration>
+                <!--<configuration>-->
+                    <!--<transformationSets>-->
+                        <!--<transformationSet>-->
+                            <!--<dir>${jmeter.result.jtl.dir}</dir>-->
+                            <!--<stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>-->
+                            <!--<outputdir>${jmeter.result.html.dir}</outputdir>-->
+                            <!--<filemappers>-->
+                                <!--<filemapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">-->
+                                    <!--<targetextension>html</targetextension>-->
+                                <!--</filemapper>-->
+                            <!--</filemappers>-->
+                        <!--</transformationSet>-->
+                        <!--<transformationSet><dir>${jmeter.result.jtl.dir}</dir>-->
+                            <!--<stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>-->
+                            <!--<outputdir>${jmeter.result.html.dir1}</outputdir>-->
+                            <!--<filemappers>-->
+                                <!--<filemapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">-->
+                                    <!--<targetextension>html</targetextension>-->
+                                <!--</filemapper>-->
+                            <!--</filemappers>-->
+                        <!--</transformationSet>-->
+                    <!--</transformationSets>-->
+                <!--</configuration>-->
 
                 <!-- using XSLT 2.0-->
                 <dependencies>
