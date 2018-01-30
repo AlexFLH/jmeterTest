@@ -32,7 +32,7 @@
             <plugin>
                 <groupId>com.lazerycode.jmeter</groupId>
                 <artifactId>jmeter-maven-plugin</artifactId>
-                <version>1.8.1</version>
+                <version>2.4.1</version>
                 <configuration>
                     <resultsFileFormat>xml</resultsFileFormat>
                     <ignoreResultFailures>true</ignoreResultFailures>
@@ -56,6 +56,31 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/jmeter/html</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/src/main/resources</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xml-maven-plugin</artifactId>
                 <version>1.0.1</version>
@@ -71,7 +96,7 @@
                     <transformationSets>
                         <transformationSet>
                             <dir>${jmeter.result.jtl.dir}</dir>
-                            <stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>
+                            <stylesheet>src/main/resources/jmeter-results-detail-report_21.xsl</stylesheet>
                             <outputDir>${jmeter.result.html.dir}</outputDir>
                             <fileMappers>
                                 <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
@@ -79,16 +104,16 @@
                                 </fileMapper>
                             </fileMappers>
                         </transformationSet>
-                        <transformationSet>
-                            <dir>${jmeter.result.jtl.dir}</dir>
-                            <stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>
-                            <outputDir>${jmeter.result.html.dir1}</outputDir>
-                            <fileMappers>
-                                <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                                    <targetExtension>html</targetExtension>
-                                </fileMapper>
-                            </fileMappers>
-                        </transformationSet>
+                        <!--<transformationSet>-->
+                            <!--<dir>${jmeter.result.jtl.dir}</dir>-->
+                            <!--<stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>-->
+                            <!--<outputDir>${jmeter.result.html.dir1}</outputDir>-->
+                            <!--<fileMappers>-->
+                                <!--<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">-->
+                                    <!--<targetExtension>html</targetExtension>-->
+                                <!--</fileMapper>-->
+                            <!--</fileMappers>-->
+                        <!--</transformationSet>-->
                     </transformationSets>
                 </configuration>
 
