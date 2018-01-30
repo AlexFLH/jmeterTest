@@ -72,21 +72,22 @@
                         <transformationSet>
                             <dir>${jmeter.result.jtl.dir}</dir>
                             <stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>
-                            <outputdir>${jmeter.result.html.dir}</outputdir>
-                            <filemappers>
-                                <filemapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                                    <targetextension>html</targetextension>
-                                </filemapper>
-                            </filemappers>
+                            <outputDir>${jmeter.result.html.dir}</outputDir>
+                            <fileMappers>
+                                <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+                                    <targetExtension>html</targetExtension>
+                                </fileMapper>
+                            </fileMappers>
                         </transformationSet>
-                        <transformationSet><dir>${jmeter.result.jtl.dir}</dir>
+                        <transformationSet>
+                            <dir>${jmeter.result.jtl.dir}</dir>
                             <stylesheet>src/test/resources/jmeter-results-detail-report_21.xsl</stylesheet>
-                            <outputdir>${jmeter.result.html.dir1}</outputdir>
-                            <filemappers>
-                                <filemapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
-                                    <targetextension>html</targetextension>
-                                </filemapper>
-                            </filemappers>
+                            <outputDir>${jmeter.result.html.dir1}</outputDir>
+                            <fileMappers>
+                                <fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+                                    <targetExtension>html</targetExtension>
+                                </fileMapper>
+                            </fileMappers>
                         </transformationSet>
                     </transformationSets>
                 </configuration>
